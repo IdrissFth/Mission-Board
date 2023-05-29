@@ -1,0 +1,67 @@
+<div class="wrapper fadeInDown zero-raduis">
+  <div id="formContent">
+    <div id="contact" class="contact-area section-padding">
+      <div class="container">
+        <div class="section-title text-center">
+          <div class="fadeIn first">
+            <h2>Need help</h2>
+          </div>
+          <p>Help each others out and get some cash in return (:</p>
+        </div>
+        <div class="row">
+          <div class="col-">
+            <div class="contact">
+              <form [formGroup]="MissionForm">
+                <div class="row">
+                  <div class="form-group col-md-6">
+                    <input
+                      formControlName="titre"
+                      type="text"
+                      id="firstName"
+                      class="fadeIn second zero-raduis"
+                      name="Titre"
+                      placeholder="Titre"
+                    />
+                  </div>
+                  <div class="form-group col-md-6">
+                    <input
+                      formControlName="prix"
+                      type="text"
+                      id="email"
+                      class="fadeIn second zero-raduis"
+                      name="Prix"
+                      placeholder="Prix"
+                    />
+                  </div>
+                  <div class="form-group col-md-12">
+                    <textarea
+                      rows="6"
+                      name="message"
+                      class="form-control"
+                      placeholder="Your Message"
+                      required="required"
+                      formControlName="description"
+                    ></textarea>
+                  </div>
+                  <div class="col-md-12 text-center">
+                    <input
+                      (click)="SaveMission()"
+                      type="submit"
+                      type="button"
+                      value="Create mission"
+                    />
+                    <input
+                      routerLink="/Mymission"
+                      type="submit"
+                      value="Cancel"
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

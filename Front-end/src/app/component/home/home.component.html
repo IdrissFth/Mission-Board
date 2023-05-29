@@ -1,0 +1,103 @@
+<link
+  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  rel="stylesheet"
+/>
+<div class="row">
+  <div class="col-md-4 static">
+    <ng-container *ngIf="userLoggedIn; else notLoggedIn">
+      <div class="profile-card">
+        <img
+          src="https://bootdey.com/img/Content/avatar/avatar1.png"
+          alt="user"
+          class="profile-photo"
+        />
+        <h5>
+          <a class="text-white">{{ user.nom }} {{ user.prenom }}</a>
+        </h5>
+      </div>
+      <ul class="nav-news-feed">
+        <li>
+          <i class="fa fa-users icon2"></i>
+          <div><a routerLink="/Home">Home</a></div>
+        </li>
+        <li>
+          <i class="fa fa-user icon3"></i>
+          <div><a routerLink="/user">Profile</a></div>
+        </li>
+        <li>
+          <i class="fa fa-list-alt icon1"></i>
+          <div><a routerLink="/Mymission">My missions</a></div>
+        </li>
+        <li>
+          <i class="fa fa-times" aria-hidden="true" style="color: red"></i>
+          <div><a (click)="Deco()" routerLink="/login">Disconnect</a></div>
+        </li>
+      </ul>
+    </ng-container>
+    <ng-template #notLoggedIn>
+      <div>
+        <div class="profile-card">
+          <div>
+            <a routerLink="/login">Login</a>
+            <a routerLink="/register">Create account</a>
+          </div>
+        </div>
+        <ul class="nav-news-feed">
+          <li>
+            <i class="fa fa-users icon2"></i>
+            <div><a routerLink="/Home">Home</a></div>
+          </li>
+          <li>
+            <i class="fa fa-user icon3"></i>
+            <div><a routerLink="/user">Profile</a></div>
+          </li>
+          <li>
+            <i class="fa fa-list-alt icon1"></i>
+            <div><a routerLink="/Mymission">My missions</a></div>
+          </li>
+        </ul>
+      </div>
+    </ng-template>
+  </div>
+
+  <div class="col-md-8">
+    <div class="container">
+      <div class="row-cols-1 row-cols-md-2 row-cols-xl-4">
+        <div class="tab-content bg-transparent">
+          <div id="note-full-container" class="note-has-grid row">
+            <div
+              class="col-md-4 single-note-item all-category"
+              *ngFor="let data of allMissions"
+            >
+              <div class="card card-body">
+                <span class="side-stick"></span>
+                <h5 class="note-title text-truncate w-75 mb-0">
+                  {{ data.titre }}
+                  <i class="point fa fa-circle ml-1 font-10"></i>
+                </h5>
+                <p class="note-date font-12 text-muted">
+                  {{ data.dateMission }}
+                </p>
+                <div class="note-content">
+                  <p
+                    class="note-inner-content text-muted"
+                    data-notecontent="Blandit tempus porttitor aasfs. Integer posuere erat a ante venenatis."
+                  >
+                    {{ data.description }}
+                  </p>
+                </div>
+                <div class="d-flex align-items-center">
+                  <a (click)="detailM(data)">
+                    <span class="mr-1"
+                      ><i class="fa fa-star favourite-note"></i
+                    ></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

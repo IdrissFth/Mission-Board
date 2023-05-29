@@ -1,0 +1,59 @@
+<div class="wrapper fadeInDown zero-raduis">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <h2 class="my-5">Profile Editing</h2>
+    </div>
+
+    <!-- Login Form -->
+    <form [formGroup]="UpdateUser">
+      <input
+        formControlName="prenom"
+        type="text"
+        id="firstName"
+        class="fadeIn second zero-raduis"
+        name="firstName"
+        placeholder="First Name"
+      />
+      <input
+        formControlName="nom"
+        type="text"
+        id="lastName"
+        class="fadeIn second zero-raduis"
+        name="lastName"
+        placeholder="Last Name"
+      />
+      <input
+        formControlName="password"
+        type="password"
+        id="password"
+        class="fadeIn third zero-raduis"
+        name="register"
+        placeholder="Old password"
+      />
+      <input
+        formControlName="Newpassword"
+        type="password"
+        class="fadeIn third zero-raduis"
+        name="register"
+        placeholder="New password"
+      />
+
+      <div id="formFooter"></div>
+      <input
+        (click)="edit()"
+        type="submit"
+        class="fadeIn fourth zero-raduis"
+        value="Edit Profile"
+      />
+      <input
+        routerLink="/user"
+        type="reset"
+        class="fadeIn fourth zero-raduis"
+        value="Cancel"
+      />
+    </form>
+  </div>
+</div>

@@ -1,0 +1,103 @@
+<div class="container bootstrap snippets bootdey">
+  <div class="row">
+    <div class="profile-nav col-md-3">
+      <div class="panel">
+        <div class="user-heading round">
+          <a>
+            <img
+              src="https://i.pinimg.com/564x/8c/4a/54/8c4a54adaaf127424e5d004e50f1619a.jpg"
+              alt=""
+            />
+          </a>
+        </div>
+
+        <ul class="list-group nav nav-pills nav-stacked">
+          <li class="list-group-item" routerLink="/Home">
+            <button type="button" class="btn btn-success btn-lg btn-block">
+              Home
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="profile-info col-md-9">
+      <div class="panel">
+        <div class="panel-body bio-graph-info">
+          <link
+            href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            rel="stylesheet"
+          />
+          <div class="container">
+            <div class="row">
+              <div class="col-12 mb-3 mb-lg-5">
+                <div class="position-relative card table-nowrap table-card">
+                  <div class="card-header align-items-center">
+                    <h5 class="mb-0">My missions</h5>
+                  </div>
+                  <div class="table-responsive">
+                    <table class="table mb-0">
+                      <thead class="small text-uppercase bg-body text-muted">
+                        <tr>
+                          <th>Mission ID</th>
+                          <th>Date</th>
+                          <th>Title</th>
+                          <th>Description</th>
+                          <th>Price</th>
+                          <th>Status</th>
+                          <th>Edit</th>
+                          <th>Delete</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr
+                          class="align-middle"
+                          *ngFor="let data of user.missionP"
+                        >
+                          <td>{{ data.code }}</td>
+                          <td>{{ data.dateMission }}</td>
+                          <td>{{ data.titre }}</td>
+                          <td>{{ data.description }}</td>
+                          <td>{{ data.prix }}</td>
+                          <td>{{ data.status }}</td>
+                          <td>
+                            <a
+                              (click)="editMission(data)"
+                              class="badge badge-warning"
+                            >
+                              <i class="ri-search-2-line"></i>
+                            </a>
+                          </td>
+                          <td>
+                            <a (click)="deletM(data)" class="text-danger"
+                              ><i
+                                class="ri-delete-bin-3-line"
+                                style="font-size: larger"
+                              ></i
+                            ></a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="card-footer text-end">
+                    <div class="row">
+                      <div class="bio-row">
+                        <p>
+                          <input
+                            routerLink="/addmission"
+                            type="button"
+                            value="Add mission"
+                          />
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

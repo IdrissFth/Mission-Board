@@ -1,0 +1,60 @@
+<div class="wrapper fadeInDown zero-raduis">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <h2 class="my-5">Register</h2>
+    </div>
+
+    <!-- Login Form -->
+    <form [formGroup]="registerForm">
+      <input
+        formControlName="prenom"
+        type="text"
+        id="firstName"
+        class="fadeIn second zero-raduis"
+        name="firstName"
+        placeholder="First Name"
+      />
+      <input
+        formControlName="nom"
+        type="text"
+        id="lastName"
+        class="fadeIn second zero-raduis"
+        name="lastName"
+        placeholder="Last Name"
+      />
+      <input
+        formControlName="email"
+        type="email"
+        id="email"
+        class="fadeIn second zero-raduis"
+        name="email"
+        placeholder="example@example.com"
+      />
+      <input
+        formControlName="password"
+        type="password"
+        id="password"
+        class="fadeIn third zero-raduis"
+        name="register"
+        placeholder="password"
+      />
+      <div id="formFooter"></div>
+      <input
+        (click)="register()"
+        type="submit"
+        class="fadeIn fourth zero-raduis"
+        value="Create Account"
+      />
+      <h2>Already have an account?</h2>
+      <input
+        routerLink="/login"
+        type="button"
+        class="fadeIn fourth zero-raduis pc"
+        value="Login"
+      />
+    </form>
+  </div>
+</div>
